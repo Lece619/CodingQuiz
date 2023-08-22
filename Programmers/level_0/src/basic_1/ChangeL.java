@@ -4,7 +4,7 @@ import java.util.stream.Collectors;
 
 public class ChangeL {
     public String solution(String myString) {
-        return myString.chars().map(c -> (char) c).mapToObj(c ->{
+        return myString.chars().mapToObj(c ->{
             if(c < 'l'){
                 return String.valueOf('l');
             }

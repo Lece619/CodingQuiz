@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ChangeITest {
+class ChangeLTest {
 
     @Test
     void solution() {
         ChangeL changeI = new ChangeL();
-        String myString = "abcdk";
-        String expected = "iiiik";
+        String myString = "abcdkm";
+        String expected = "lllllm";
         String actual = changeI.solution(myString);
         assertEquals(expected, actual);
     }

@@ -24,7 +24,14 @@ public class ListSlicer {
         }
 
         public int[] slice(int[] num_list){
-            return Arrays.copyOfRange(num_list, Math.max(this.start, 0), Math.min(this.end + 1, num_list.length));
+            ArrayList<Integer> sliced_list = new ArrayList<>();
+            int startSlice = Math.max(this.start, 0);
+            int endSlice = Math.min(this.end, num_list.length - 1);
+
+            for(int i = startSlice; i <= endSlice; i += this.term){
+                sliced_list.add(num_list[i]);
+            }
+            return sliced_list.stream().mapToInt(i -> i).toArray();
         }
     }
 
@@ -57,13 +64,5 @@ public class ListSlicer {
             this.term = slicer[2];
         }
 
-        @Override
-        public int[] slice(int[] num_list) {
-            ArrayList<Integer> sliced_list = new ArrayList<>();
-            for(int i = this.start; i <= this.end; i += this.term){
-                sliced_list.add(num_list[i]);
-            }
-            return sliced_list.stream().mapToInt(i -> i).toArray();
-        }
     }
 }
